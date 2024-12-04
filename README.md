@@ -5,7 +5,10 @@ Welcome to my **Learning Projects Repository**, where I share various projects I
 ## Deep Learning
 
 ### 1. [2D Gradient Descent Visualization](https://github.com/gussttaav/learning-tools/tree/gradient-descend-2D)
-- **Description**: An interactive web-based tool for visualizing the gradient descent algorithm in 2D. It demonstrates how the algorithm converges towards a local minimum by iteratively updating the input and the learning rate.
+An interactive web-based tool for visualizing the gradient descent algorithm in 2D. It demonstrates how the algorithm converges towards a local minimum by iteratively selecting the initial value and the learning rate.
+
+### 2. [3D Gradient Descent Visualization](https://github.com/gussttaav/learning-tools/tree/gradient-descend-3D)
+An interactive web-based tool for visualizing the gradient descent algorithm in 3D. It demonstrates how the algorithm converges towards a local minimum by iteratively selecting the initial point and the learning rate.
 
 ---
 
