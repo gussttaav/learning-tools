@@ -7,6 +7,20 @@ const startValueLabel = document.getElementById('start-value-label');
 const alphaLabel = document.getElementById('alpha-label');
 
 const threshold = 0.0001; // Convergence threshold
+
+//x-axis range and ticks separation distance
+const minX = -0.2;
+const maxX = 3.3;
+const tickXstep = 0.5;
+
+//y-axis range and ticks separation distance
+const minY = -3.1;
+const maxY = 1.6;
+const tickYstep = 0.5;
+
+//simulation step time interval in milliseconds
+simStepTime = 500
+
 let intervalId = null;
 let isSimulating = false;
 
@@ -22,11 +36,9 @@ function f_prime(x) {
 
 // Scale coordinates from function space to canvas space
 function scaleX(x) {
-  return (x + 0.2) / 3.3 * canvas.width;
+  return (x - minX) / maxX * canvas.width;
 }
 function scaleY(y) {
-  const minY = -3.1;
-  const maxY = 1.6;
   return canvas.height - ((y - minY) / (maxY - minY)) * canvas.height;
 }
 
@@ -41,10 +53,10 @@ function drawFunction(initialX) {
   ctx.beginPath();
   ctx.strokeStyle = 'red';
   ctx.lineWidth = 2;
-  for (let x = -0.2; x <= 3.1; x += 0.01) {
+  for (let x = minX; x <= maxX; x += 0.01) {
     const canvasX = scaleX(x);
     const canvasY = scaleY(f(x));
-    if (x === -0.2) {
+    if (x === minX) {
       ctx.moveTo(canvasX, canvasY);
     } else {
       ctx.lineTo(canvasX, canvasY);
@@ -75,20 +87,26 @@ function drawAxes() {
   ctx.lineTo(scaleX(0), canvas.height);
   ctx.stroke();
 
-  // Draw x-axis ticks and labels every 0.5
-  for (let x = 0.5; x <= 3.1; x += 0.5) {
-    const tickX = scaleX(x);
-    ctx.beginPath();
-    ctx.moveTo(tickX, scaleY(0) - 5);
-    ctx.lineTo(tickX, scaleY(0) + 5);
-    ctx.stroke();
+  // Draw x-axis ticks and labels
+  const fstXtick = Math.ceil(minX / tickXstep) * tickXstep; 
+  const lastXtick = Math.floor(maxX / tickXstep) * tickXstep;
+  for (let x = fstXtick; x <= lastXtick; x += tickXstep) {
+    if(x !== 0){
+      const tickX = scaleX(x);
+      ctx.beginPath();
+      ctx.moveTo(tickX, scaleY(0) - 5);
+      ctx.lineTo(tickX, scaleY(0) + 5);
+      ctx.stroke();
 
-    // Draw x-axis label
-    ctx.fillText(x.toFixed(1), tickX - 10, scaleY(0) + 20);
+      // Draw x-axis label
+      ctx.fillText(x.toFixed(1), tickX - 10, scaleY(0) + 20);
+    }
   }
 
-  // Draw y-axis ticks and labels every 0.5
-  for (let y = -3; y <= 1.5; y += 0.5) {
+  // Draw y-axis ticks and labels
+  const fstYtick = Math.ceil(minY / tickYstep) * tickYstep; 
+  const lastYtick = Math.floor(maxY / tickYstep) * tickYstep;
+  for (let y = fstYtick; y <= lastYtick; y += tickYstep) {
     const tickY = scaleY(y);
     ctx.beginPath();
     ctx.moveTo(scaleX(0) - 5, tickY);
@@ -141,7 +159,7 @@ function startGradientDescent() {
       startButton.textContent = 'Start Gradient Descent'; // Reset button text
       return;
     }
-  }, 500);
+  }, simStepTime);
 }
 
 // Draw a step in the gradient descent process, with an arrow to the next step

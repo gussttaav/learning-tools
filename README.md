@@ -43,7 +43,7 @@ As the gradient descent progresses:
 
 ## Customization
 
-- Modify the function f(x) and its derivative in the `js\gradient.js` file:
+- Modify the function f(x) and its derivative in the `js/gradient.js` file:
 ```javascript
 function f(x) {
  return x**4 - 5*x**3 + 7*x**2 - 3*x;
@@ -55,6 +55,17 @@ function f_prime(x) {
 ```
 
 - Adjust convergence settings by changing the threshold value.
+
+- Adjust the `x` and `y` axis ranges as well as the label separation
+```javascript
+const minX = -0.2;
+const maxX = 3.3;
+const tickXstep = 0.5;
+
+const minY = -3.1;
+const maxY = 1.6;
+const tickYstep = 0.5;
+```
 
 ## Contributing
 Contributions are welcome! If you'd like to suggest improvements, feel free to open an issue or submit a pull request.
