@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBSCAN Visualization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">DBSCAN Algorithm Visualization</h1>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-black">
+                    <div class="card-body">
+                        <h5 class="card-title">Parameters</h5>
+                        
+                        <div class="mb-3">
+                            <label for="numPoints" class="form-label">Number of Points</label>
+                            <input type="range" class="form-range" id="numPoints" min="50" max="500" value="100">
+                            <span id="numPointsValue">100</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="minPoints" class="form-label">Min Points</label>
+                            <input type="range" class="form-range" id="minPoints" min="2" max="10" value="4">
+                            <span id="minPointsValue">4</span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="epsilon" class="form-label">Epsilon</label>
+                            <input type="range" class="form-range" id="epsilon" min="20" max="100" value="60">
+                            <span id="epsilonValue">60</span>
+                        </div>
+                        
+                        <button id="startBtn" class="btn btn-primary">Start Algorithm</button>
+                        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="visualizer"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
