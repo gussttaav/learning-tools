@@ -2,6 +2,11 @@
 
 Welcome to my **Learning Projects Repository**, where I share various projects I've created while teaching, learning and exploring topics in the field of deep learning. Each project is designed to tackle specific concepts or techniques, with interactive tools, detailed implementations, and code examples.
 
+## Unsupervised Learning
+
+### 1. [DBSCAN Algorithm Visualization](https://github.com/gussttaav/learning-tools/tree/dbscan-visualization)
+An interactive web-based visualization tool for the DBSCAN (Density-Based Spatial Clustering of Applications with Noise) clustering algorithm. This project helps users understand how DBSCAN works by providing a step-by-step visual representation of the clustering process.
+
 ## Deep Learning
 
 ### 1. [2D Gradient Descent Visualization](https://github.com/gussttaav/learning-tools/tree/gradient-descend-2D)
