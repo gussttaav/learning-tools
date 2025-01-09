@@ -4,7 +4,7 @@ An interactive web-based visualization tool for the DBSCAN (Density-Based Spatia
 
 ![DBSCAN Visualization](/img/preview.png)
 
-## Features
+## 🚀 Features
 
 - **Interactive Visualization**: Watch the DBSCAN algorithm work in real-time
 - **Adjustable Parameters**:
@@ -21,7 +21,7 @@ An interactive web-based visualization tool for the DBSCAN (Density-Based Spatia
 - **Responsive Design**: Works on different screen sizes
 - **Real-time Parameter Updates**: Instantly see how parameter changes affect the clustering
 
-## Algorithm Implementation
+## ⚙️ Algorithm Implementation
 
 The visualization follows the three main steps of DBSCAN:
 
@@ -37,7 +37,7 @@ The visualization follows the three main steps of DBSCAN:
    - Assigns non-core points to nearby clusters
    - Marks isolated points as noise
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 dbscan-visualization/
@@ -51,11 +51,11 @@ dbscan-visualization/
     └── preview.png     # Project preview image
 ```
 
-## Setup
+## 🔧 Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/dbscan-visualization.git
+git clone --branch dbscan-visualization --single-branch https://github.com/gussttaav/learning-tools.git
 ```
 
 2. Navigate to the project directory:
@@ -65,12 +65,12 @@ cd dbscan-visualization
 
 3. Open `index.html` in a web browser.
 
-## Dependencies
+## 🛠️ Dependencies
 
 - Bootstrap 5.3.0 (via CDN)
 - Modern web browser with HTML5 Canvas support
 
-## Usage
+## ▶️ Usage
 
 1. Adjust the parameters using the sliders:
    - **Number of Points**: Controls the dataset size
@@ -88,7 +88,7 @@ cd dbscan-visualization
    - Each phase is color-coded for clarity
    - The ε-neighborhood is shown as a circle around the current point
 
-## Browser Compatibility
+## 🌐 Browser Compatibility
 
 Tested and working on:
 - Chrome 90+
@@ -96,11 +96,11 @@ Tested and working on:
 - Safari 14+
 - Edge 90+
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! If you'd like to suggest improvements, feel free to open an issue or submit a pull request.
 
-## Acknowledgments
+## 🏆 Acknowledgments
 
 - Implementation inspired by the original DBSCAN algorithm by Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu
 - Bootstrap for the UI components
