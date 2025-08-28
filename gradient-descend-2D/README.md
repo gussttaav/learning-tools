@@ -7,9 +7,9 @@ f(x) = x^4 - 5x^3 + 7x^2 - 3x
 This function, which is a fourth-degree polynomial, exhibits multiple turning points and provides a clear visual representation of how gradient descent behaves in the presence of local minima and maxima.
 
 
+👉 **[Try it live here!](https://gradient-descend2.vercel.app/)**
 
-
-![Gradient Descent Visualization](img/screenshot.png) 
+[![Gradient Descent Visualization](img/screenshot.png)](https://gradient-descend2.vercel.app/)
 
 ## Features
 

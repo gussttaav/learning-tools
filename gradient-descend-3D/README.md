@@ -6,7 +6,9 @@ f(x, y) = x^4 - 5x^3 + 7x^2 - 3x + y^2 - 2y
 
 This function exhibits multiple turning points and provides a clear visual representation of how gradient descent behaves in the presence of local minima and maxima.
 
-![Gradient Descent Simulation Screenshot](img/screenshot.png)
+👉 **[Try it live here!](https://gradient-descend3.vercel.app/)**
+
+[![Gradient Descent Simulation Screenshot](img/screenshot.png)](https://gradient-descend3.vercel.app/)
 
 ## Features
 
