@@ -1,0 +1,73 @@
+/* styles.css */
+body {
+    background-color: black;
+    color: #18d26e;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #18d26e;
+}
+
+#canvas {
+    background-color: black;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #18d26e;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #18d26e;
+}
+
+#start-button {
+    background-color: #18d26e;
+    border: none;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #0D3512;
+    color: #18d26e;
+}
+
+#start-value-label,
+#alpha-label {
+    font-size: 1rem;
+    color: #18d26e;
+}
+
+/* Change the thumb color (slider ball) */
+input[type="range"] {
+    --bs-range-thumb-bg: #ff5733; /* Change the thumb background color */
+    --bs-range-thumb-border-radius: 50%; /* Ensure the thumb is circular */
+    --bs-range-thumb-width: 20px; /* Adjust the size */
+    --bs-range-thumb-height: 20px;
+    --bs-range-thumb-focus-box-shadow: 0 0 5px #ff5733; /* Add focus effect */
+  }
+  
+  /* Change the track progress color */
+  input[type="range"] {
+    --bs-range-track-bg: #c70039; /* Adjust the track background color */
+    --bs-range-track-height: 10px; /* Adjust track height */
+  }
+  
+  /* Adjust the transition for better smoothness */
+  input[type="range"] {
+    --bs-range-thumb-transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
