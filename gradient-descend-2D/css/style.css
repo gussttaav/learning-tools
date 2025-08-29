@@ -2,35 +2,58 @@
 body {
     background-color: black;
     color: #18d26e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
-    text-align: center;
     margin-top: 20px;
+    max-width: 900px; /* Limit the container width */
 }
 
 h2 {
     color: #18d26e;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #canvas {
+    margin-top: 15px;
     background-color: black;
+    max-width: 100%; /* Make canvas responsive */
 }
 
 .slider-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     color: #18d26e;
+    max-width: 600px; /* Limit slider container width */
+    margin: 15px auto; /* Center the container */
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .form-label {
     font-size: 1rem;
     color: #18d26e;
+    min-width: 150px; /* Give labels consistent width */
+    text-align: right; /* Align labels to the right */
+    margin-bottom: 0;
+}
+
+.form-range {
+    max-width: 300px; /* Limit slider width */
+}
+
+.value-display {
+    min-width: 50px; /* Give value display consistent width */
+    text-align: left; /* Align values to the left */
 }
 
 #start-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #18d26e;
     border: none;
     font-size: 1.1rem;
@@ -38,6 +61,7 @@ h2 {
     cursor: pointer;
     color: black;
     transition: background-color 0.3s;
+    margin: 15px auto;
 }
 
 #start-button:hover {
@@ -51,23 +75,68 @@ h2 {
     color: #18d26e;
 }
 
-/* Change the thumb color (slider ball) */
-input[type="range"] {
-    --bs-range-thumb-bg: #ff5733; /* Change the thumb background color */
-    --bs-range-thumb-border-radius: 50%; /* Ensure the thumb is circular */
-    --bs-range-thumb-width: 20px; /* Adjust the size */
-    --bs-range-thumb-height: 20px;
-    --bs-range-thumb-focus-box-shadow: 0 0 5px #ff5733; /* Add focus effect */
-  }
-  
-  /* Change the track progress color */
-  input[type="range"] {
-    --bs-range-track-bg: #c70039; /* Adjust the track background color */
-    --bs-range-track-height: 10px; /* Adjust track height */
-  }
-  
-  /* Adjust the transition for better smoothness */
-  input[type="range"] {
-    --bs-range-thumb-transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
+.form-range::-webkit-slider-runnable-track {
+    background-color: #333;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: #18d26e;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.form-range::-moz-range-track {
+    background-color: #333;
+}
+
+.form-range::-moz-range-thumb {
+    background-color: #18d26e;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+}
+
+.info-panel {
+    background-color: #0a1a12;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #18d26e;
+}
+
+.function-display {
+    font-family: 'Courier New', monospace;
+    background-color: #0D3512;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.tips {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #0D3512;
+    border-radius: 5px;
+}
+
+.tips h4 {
+    color: #18d26e;
+    margin-bottom: 10px;
+}
+
+.tips ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.tips li {
+    margin-bottom: 8px;
+}
+
+.text-muted {
+    color: #888 !important;
+}

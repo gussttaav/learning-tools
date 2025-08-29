@@ -9,20 +9,46 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div class="container text-center my-4">
+  <div class="container my-4">
     <h2>Gradient Descent Visualization</h2>
-    <canvas id="canvas" width="800" height="450"></canvas>
+
+    <div class="info-panel">
+    <p>Gradient descent is an optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent. 
+      It's widely used in machine learning for training models and finding optimal parameters.
+      This visualization demonstrates how the algorithm converges towards a local minimum by iteratively updating the input based on the gradient of the function:
+    </p>
+    <div class="function-display">
+      f(x) = x⁴ - 5x³ + 7x² - 3x
+    </div>
+    <p>This function, which is a fourth-degree polynomial, exhibits multiple turning points and provides a clear visual representation of how gradient descent behaves in the presence of local minima and maxima.</p>
+    </div>
+    <canvas id="canvas" width="900" height="450"></canvas>
     <div class="slider-container mt-3">
       <label for="start-value" class="form-label">Initial x Value:</label>
-      <input type="range" id="start-value" min="-0.2" max="3.1" step="0.01" value="1.1">
-      <span id="start-value-label">1.1</span>
+      <input type="range" class="form-range" id="start-value" min="-0.2" max="3.1" step="0.01" value="1.1">
+      <span id="start-value-label" class="value-display">1.1</span>
     </div>
     <div class="slider-container mt-2">
       <label for="alpha" class="form-label">Learning Rate (Alpha):</label>
-      <input type="range" id="alpha" min="0.001" max="0.3" step="0.001" value="0.1">
-      <span id="alpha-label">0.1</span>
+      <input type="range" class="form-range" id="alpha" min="0.001" max="0.3" step="0.001" value="0.1">
+      <span id="alpha-label" class="value-display">0.1</span>
     </div>
     <button id="start-button" class="btn btn-success mt-3">Start Gradient Descent</button>
+    <div class="tips">
+      <h4>Try These Examples:</h4>
+      <ul>
+        <li><strong>Small alpha (0.01)</strong> with initial x = 1.1: Shows slow but stable convergence</li>
+        <li><strong>Large alpha (0.2)</strong> with initial x = 1.5: Oscillate and diverge</li>
+        <li><strong>Very large alpha (0.3)</strong> with initial x = 1.1: Overshoot the global minimum</li>
+        <li><strong>Optimal alpha (0.1)</strong> with initial x = 1.1: Efficient convergence to minimum</li>
+      </ul>
+    </div>
+
+    <footer class="text-center mt-4 pt-3" style="border-top: 1px solid #333;">
+        <p class="text-muted mb-2">
+            <small>Created by <strong style="color: #18d26e;">Gustavo Torres Guerrero</strong></small>
+        </p>
+    </footer>
   </div>
   
   <script src="./js/gradient.js"></script>
