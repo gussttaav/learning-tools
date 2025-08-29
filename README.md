@@ -1,6 +1,6 @@
 # Learning Projects Repository
 
-Welcome to my **Learning Projects Repository**, where I share various projects I've created while teaching, learning and exploring topics in the field of deep learning. Each project is designed to tackle specific concepts or techniques, with interactive tools, detailed implementations, and code examples.
+Welcome to my **Learning Projects Repository**, where I share various projects I've created while teaching, learning and exploring topics in the field of deep learning. Each project is specifically designed to illustrate a particular concept, algorithm, or technique through an interactive and visual interface. The aim is to provide a practical and intuitive way to explore and understand the fundamentals of deep learning.
 
 ## Unsupervised Learning
 

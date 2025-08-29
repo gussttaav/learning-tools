@@ -4,12 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DBSCAN Visualization</title>
+    <meta name="author" content="Gustavo Torres Guerrero">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container my-4">
         <h1 class="text-center mb-4">DBSCAN Algorithm Visualization</h1>
+        <p><strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</strong> is a popular clustering algorithm that groups together points that are closely packed while marking points in low-density regions as outliers (noise).</p>
+
+        <!-- Algorithm Description -->
+        <div class="algorithm-description">
+
+            <h2>Algorithm Implementation</h2>
+            <p>The visualization follows the three main steps of DBSCAN:</p>
+
+            <!-- Step Indicators -->
+            <ol>
+                <li><strong>Core Point Identification</strong>
+                    <ul>
+                    <li>Finds points with sufficient neighbors within ε radius</li>
+                    <li>Marks them as core points (red)</li>
+                    </ul>
+                </li>
+                <li><strong>Cluster Formation</strong>
+                    <ul>
+                    <li>Connects core points that are within ε distance</li>
+                    <li>Forms clusters through density connectivity</li>
+                    </ul>
+                </li>
+                <li><strong>Border Point Assignment</strong>
+                    <ul>
+                    <li>Assigns non-core points to nearby clusters</li>
+                    <li>Marks isolated points as noise</li>
+                    </ul>
+                </li>
+                </ol>
+        </div>
         
         <div class="row">
             <div class="col-md-4">
@@ -37,6 +68,14 @@
                         
                         <button id="startBtn" class="btn btn-primary">Start Algorithm</button>
                         <button id="resetBtn" class="btn btn-secondary">Reset</button>
+
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div class="progress">
+                                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                            </div>
+                            <small id="progressText" class="text-muted">Ready to start</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -49,6 +88,12 @@
                 </div>
             </div>
         </div>
+
+        <footer class="text-center mt-4 pt-3" style="border-top: 1px solid #333;">
+            <p class="text-muted mb-2">
+                <small>Created by <strong style="color: #18d26e;">Gustavo Torres Guerrero</strong></small>
+            </p>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

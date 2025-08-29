@@ -26,7 +26,7 @@ class DBSCANVisualizer {
 
         // Base values for reference canvas size (e.g., for a 800x400 canvas)
         this.baseWidth = 800;
-        this.baseHeight = 400;
+        this.baseHeight = 430;
         this.basePointRadius = 4; // Base radius in pixels for reference size
         this.baseMinDistance = 12; // Base minimum distance between points
 
@@ -35,6 +35,10 @@ class DBSCANVisualizer {
         this.stepIndex = 0; // Index within current step
         this.isProcessing = false; // Flag to track if we're in the middle of processing
         this.processingQueue = []; // Queue for connected components step
+
+        // UI elements for step tracking
+        this.progressBar = document.getElementById('progressBar');
+        this.progressText = document.getElementById('progressText');
         
         this.setupCanvas();
         this.setupControls();
@@ -42,10 +46,49 @@ class DBSCANVisualizer {
         // Generate and show initial points
         this.makeBlobs();
         this.drawCurrentState();
+        this.updateProgress();
 
         window.addEventListener('resize', () => {
             this.handleResize();
         });
+    }
+
+    updateProgress() {
+        let progress = 0;
+        let progressText = 'Ready to start';
+
+        if (this.simulationState === 'running') {
+            switch (this.algorithmStep) {
+                case 0: // Core point identification
+                    progress = (this.stepIndex / this.points.length) * 33.33;
+                    progressText = `Identifying core points... (${this.stepIndex}/${this.points.length})`;
+                    break;
+                case 1: // Cluster formation
+                    const totalClusters = this.points.filter(p => p.isCore && p.cluster === -1).length + this.stepIndex;
+                    progress = 33.33 + (this.stepIndex / Math.max(totalClusters, 1)) * 33.33;
+                    progressText = `Forming clusters... (${this.stepIndex} clusters formed)`;
+                    break;
+                case 2: // Non-core assignment
+                    const nonCorePoints = this.points.filter(p => !p.isCore).length;
+                    const processedNonCore = Math.min(this.stepIndex, nonCorePoints);
+                    progress = 66.66 + (processedNonCore / Math.max(nonCorePoints, 1)) * 33.34;
+                    progressText = `Assigning border points... (${processedNonCore}/${nonCorePoints})`;
+                    break;
+            }
+        } else if (this.simulationState === 'stopped') {
+            if (this.points.some(p => p.cluster !== -1)) {
+                progress = 100;
+                progressText = 'Algorithm completed!';
+            } else {
+                progress = 0;
+                progressText = 'Ready to start';
+            }
+        } else if (this.simulationState === 'paused') {
+            progressText = 'Algorithm paused...';
+        }
+
+        this.progressBar.style.width = `${Math.min(progress, 100)}%`;
+        this.progressText.textContent = progressText;
     }
 
     handleResize() {
@@ -75,7 +118,7 @@ class DBSCANVisualizer {
         
         const dpr = window.devicePixelRatio || 1;
         this.canvas.width = rect.width * dpr;
-        this.canvas.height = 400 * dpr;
+        this.canvas.height = 430 * dpr;
         
         this.ctx.scale(dpr, dpr);
 
@@ -177,6 +220,7 @@ class DBSCANVisualizer {
 
         this.simulationState = 'running';
         this.updateButtonText();
+        this.updateProgress();
         this.runSimulation();
     }
 
@@ -187,11 +231,13 @@ class DBSCANVisualizer {
         }
         this.simulationState = 'paused';
         this.updateButtonText();
+        this.updateProgress();
     }
 
     continueSimulation() {
         this.simulationState = 'running';
         this.updateButtonText();
+        this.updateProgress();
         this.runSimulation();
     }
 
@@ -217,6 +263,7 @@ class DBSCANVisualizer {
                     this.stepIndex = 0;
                     // Prepare queue for connected components
                     this.processingQueue = this.points.filter(p => p.isCore && p.cluster === -1);
+                    this.updateProgress();
                 }
                 break;
 
@@ -240,6 +287,7 @@ class DBSCANVisualizer {
                     this.algorithmStep++;
                     this.stepIndex = 0;
                     this.processingQueue = this.points.filter(p => !p.isCore && p.cluster === -1);
+                    this.updateProgress();
                 }
                 break;
 
@@ -261,6 +309,7 @@ class DBSCANVisualizer {
                 break;
         }
 
+        this.updateProgress();
         this.isProcessing = false;
     }
 
@@ -350,6 +399,7 @@ class DBSCANVisualizer {
         }
         this.simulationState = 'stopped';
         this.updateButtonText();
+        this.updateProgress();
     }
 
     delay(ms) {
@@ -537,6 +587,7 @@ class DBSCANVisualizer {
         this.currentPointIndex = 0;
         this.simulationState = 'stopped';
         this.updateButtonText();
+        this.updateProgress();
 
         // Generate new points and show them immediately
         this.makeBlobs();
