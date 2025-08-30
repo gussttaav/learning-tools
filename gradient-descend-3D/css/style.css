@@ -1,11 +1,18 @@
 body {
+    background-color: black;
+    color: #18d26e;
     font-family: 'Arial', sans-serif;
 }
 
 .plot-container {
+    background-color: black;
+    border: 1px solid #18d26e;
+    border-radius: 5px;
     width: 100%;
     height: 600px;
-    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 label {
@@ -19,3 +26,93 @@ label {
 #start-button {
     font-size: 18px;
 }
+
+.plot-container .js-plotly-plot .plotly, 
+.plot-container .js-plotly-plot .plotly div {
+    border-radius: 5px;
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background-color: #333;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: #18d26e;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.form-range::-moz-range-track {
+    background-color: #333;
+}
+
+.form-range::-moz-range-thumb {
+    background-color: #18d26e;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+}
+
+#start-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #18d26e;
+    border: none;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.3s;
+    margin: 15px auto;
+}
+
+#start-button:hover {
+    background-color: #0D3512;
+    color: #18d26e;
+}
+
+.info-panel {
+    background-color: #0a1a12;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #18d26e;
+}
+
+.function-display {
+    font-family: 'Courier New', monospace;
+    background-color: #0D3512;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.tips {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #0D3512;
+    border-radius: 5px;
+}
+
+.tips h4 {
+    color: #18d26e;
+    margin-bottom: 10px;
+}
+
+.tips ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.tips li {
+    margin-bottom: 8px;
+}
+
+.text-muted {
+    color: #888 !important;
+}   

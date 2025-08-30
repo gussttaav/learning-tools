@@ -10,35 +10,63 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bg-dark text-light">
+<body>
 
-<div class="container">
+<div class="container my-4">
+    <h1 class="text-center mb-2">Gradient Descent Visualization 3D</h1>
+
+    <div class="info-panel">
+    <p>Gradient descent is an optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent. 
+      It's widely used in machine learning for training models and finding optimal parameters.
+      This visualization demonstrates how the algorithm converges towards a local minimum by iteratively updating the input based on the gradient of the function:
+    </p>
+    <div class="function-display">
+        f(x, y) = x⁴ - 5x³ + 7x² - 3x + 7y² - 2y
+    </div>
+    <p>This function exhibits multiple turning points and provides a clear visual representation of how gradient descent behaves in the presence of local minima and maxima.</p>
+    </div>
+
     <div class="row mt-5">
         <div class="col-md-8">
             <div id="plotly-3d" class="plot-container"></div>
         </div>
         <div class="col-md-4">
-            <h4 class="text-center">Gradient Descent Simulation</h4>
             
             <!-- X Slider -->
             <label for="x-slider" class="form-label">Select Initial X Value</label>
             <input type="range" class="form-range" id="x-slider" min="-0.2" max="2.85" step="0.03" value="1.2">
-            <div class="text-center" id="x-value">X: 1.2</div>
+            <div class="text-center mb-4" id="x-value">X: 1.2</div>
 
             <!-- Y Slider -->
             <label for="y-slider" class="form-label">Select Initial Y Value</label>
             <input type="range" class="form-range" id="y-slider" min="-0.5" max="2.5" step="0.03" value="2">
-            <div class="text-center" id="y-value">Y: 2</div>
+            <div class="text-center mb-4" id="y-value">Y: 2</div>
 
             <!-- Step (Alpha) Slider -->
-            <label for="alpha-slider" class="form-label">Select Alpha (Step Size)</label>
+            <label for="alpha-slider" class="form-label">Select Alpha (Learning Rate)</label>
             <input type="range" class="form-range" id="alpha-slider" min="0.001" max="0.3" step="0.001" value="0.1">
-            <div class="text-center" id="alpha-value">Alpha: 0.1</div>
+            <div class="text-center mb-4" id="alpha-value">Alpha: 0.1</div>
 
             <!-- Start Button -->
-            <button id="start-button" class="btn btn-primary w-100 mt-3">Start Simulation</button>
+            <button id="start-button" class="btn btn-success w-100 mt-3">Start Simulation</button>
         </div>
     </div>
+
+    <div class="tips">
+      <h4>Try These Examples:</h4>
+      <ul>
+        <li><strong>Small alpha (0.01)</strong> with initial x = 1.2, y = 2: Shows slow but stable convergence</li>
+        <li><strong>Large alpha (0.2)</strong> with initial x = 1.2, y = 2: Oscillate and diverge</li>
+        <li><strong>Very large alpha (0.3)</strong> with initial x = 1.2, y = 2: Overshoot the global minimum</li>
+        <li><strong>Optimal alpha (0.1)</strong> with initial x = 1.2, y = 2: Efficient convergence to minimum</li>
+      </ul>
+    </div>
+
+    <footer class="text-center mt-4 pt-3" style="border-top: 1px solid #333;">
+        <p class="text-muted mb-2">
+            <small>Created by <strong style="color: #18d26e;">Gustavo Torres Guerrero</strong></small>
+        </p>
+    </footer>
 </div>
 
 <!-- Include JavaScript -->
