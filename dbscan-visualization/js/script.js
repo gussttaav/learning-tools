@@ -464,8 +464,8 @@ class DBSCANVisualizer {
         
         // Calculate cluster centers
         const centerY = canvasHeight / 2;
-        const cluster1X = margin + usableWidth * 0.25;
-        const cluster2X = margin + usableWidth * 0.75;
+        const cluster1X = margin + usableWidth * 0.30;
+        const cluster2X = margin + usableWidth * 0.60;
         
         const centers = [
             { x: cluster1X, y: centerY },

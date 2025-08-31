@@ -1,8 +1,8 @@
 # DBSCAN Algorithm Visualization
 
-An interactive web-based visualization tool for the DBSCAN (Density-Based Spatial Clustering of Applications with Noise) clustering algorithm. This project helps users understand how DBSCAN works by providing a step-by-step visual representation of the clustering process.
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-green?style=plastic&logo=vercel)](https://learning-tools-peach.vercel.app/)
 
-👉 **[Try it live here!](https://learning-tools-peach.vercel.app/)**
+An interactive web-based visualization tool for the DBSCAN (Density-Based Spatial Clustering of Applications with Noise) clustering algorithm. This project helps users understand how DBSCAN works by providing a step-by-step visual representation of the clustering process.
 
 [![DBSCAN Visualization](img/preview.png)](https://learning-tools-peach.vercel.app/)
 

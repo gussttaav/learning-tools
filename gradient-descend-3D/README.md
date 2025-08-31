@@ -1,12 +1,12 @@
 # Gradient Descent 3D Visualization
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-green?style=plastic&logo=vercel)](https://gradient-descend3.vercel.app/)
+
 An interactive web-based tool for visualizing the gradient descent algorithm in 3D. This project demonstrates how the algorithm converges towards a local minimum by iteratively updating the input based on the gradient of the function:
 
 f(x, y) = x^4 - 5x^3 + 7x^2 - 3x + y^2 - 2y
 
 This function exhibits multiple turning points and provides a clear visual representation of how gradient descent behaves in the presence of local minima and maxima.
-
-👉 **[Try it live here!](https://gradient-descend3.vercel.app/)**
 
 [![Gradient Descent Simulation Screenshot](img/screenshot.png)](https://gradient-descend3.vercel.app/)
 
